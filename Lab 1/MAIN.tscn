@@ -1,0 +1,194 @@
+[gd_scene load_steps=9 format=3 uid="uid://brcchg4j8y7rv"]
+
+[ext_resource type="PackedScene" uid="uid://1do14081sslb" path="res://tree.tscn" id="1_ina0u"]
+[ext_resource type="Texture2D" uid="uid://cebo0vbjopk3w" path="res://Stone.png" id="2_6g7co"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s544g"]
+sky_top_color = Color(0.733333, 0.901961, 0.968627, 1)
+sky_horizon_color = Color(0.729412, 0.794118, 0.782353, 1)
+ground_bottom_color = Color(0.184314, 0.27451, 0.160784, 1)
+ground_horizon_color = Color(0.729412, 0.794118, 0.782353, 1)
+
+[sub_resource type="Sky" id="Sky_jy4v0"]
+sky_material = SubResource("ProceduralSkyMaterial_s544g")
+
+[sub_resource type="Environment" id="Environment_x8n18"]
+background_mode = 2
+sky = SubResource("Sky_jy4v0")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66xik"]
+albedo_color = Color(0.113725, 0.160784, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4ncl"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+albedo_texture = ExtResource("2_6g7co")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyg4f"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+albedo_texture = ExtResource("2_6g7co")
+
+[node name="Forest" type="Node3D"]
+transform = Transform3D(20, -4.2277e-15, 6.41165e-15, 6.41165e-15, 18.3827, -7.87884, -4.2277e-15, 7.87884, 18.3827, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x8n18")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.006618, 0.00112352, -0.0495473, 0.0195238, 0.0458859, 0.00364827, 0.0455524, -0.0198299, 0.00563475, -1.63936, 0.829391, 1.1138)
+fov = 97.6
+near = 0.001
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, -1.21528e-15, -2.35789e-16, -1.20716e-15, -0.915079, -0.403274, 2.74324e-16, 0.403274, -0.915079, -1.15922e-16, -0.332424, 0.142475)
+size = Vector3(100, 0.5, 100)
+material = SubResource("StandardMaterial3D_66xik")
+
+[node name="Tree" parent="." instance=ExtResource("1_ina0u")]
+transform = Transform3D(1, 3.32292e-22, -4.8546e-22, -3.84624e-23, 1, -4.59159e-08, 4.21229e-22, 9.07808e-08, 1, 0.77607, -0.394328, -0.745245)
+
+[node name="Tree2" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(1.00234, -1.48558e-22, -1.18403e-22, 6.13588e-23, 1.00234, -2.54707e-08, 1.87679e-22, -1.29148e-07, 1.00234, -1.74309, 0.382802, 0.893144)
+
+[node name="Tree3" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(1, 1.90166e-24, -3.4351e-23, 5.63738e-23, 1, 7.77315e-08, 2.59186e-23, -4.31187e-09, 1, 1.02862, 0.544748, 1.27099)
+
+[node name="Tree4" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.0551767, -0.393342, -0.917735, 0.393342, 0.853373, -0.342107, 0.917735, -0.342107, 0.201804, -1.86629, -0.333042, -0.777045)
+
+[node name="Tree5" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.055306, -0.394264, -0.919886, 0.394264, 0.855373, -0.342909, 0.919886, -0.342909, 0.202277, -0.0967542, -0.734526, -1.71378)
+
+[node name="Tree6" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.0551767, -0.393342, -0.917735, 0.393342, 0.853373, -0.342107, 0.917735, -0.342107, 0.201804, -0.334808, 1.12202, 2.61788)
+
+[node name="Tree7" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.56126, -0.326042, -0.760712, 0.326042, 0.757708, -0.56531, 0.760712, -0.565311, -0.318968, 2.77661, 0.0201747, 0.047071)
+
+[node name="Tree8" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.562576, -0.326806, -0.762495, 0.326806, 0.759483, -0.566635, 0.762495, -0.566636, -0.319715, 4.40264, 0.281655, 0.657149)
+
+[node name="Tree13" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.0551767, -0.393342, -0.917735, 0.393342, 0.853373, -0.342107, 0.917735, -0.342107, 0.201804, -1.56765, 1.56923, 3.66129)
+
+[node name="Tree14" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.055306, -0.394264, -0.919886, 0.394264, 0.855373, -0.342909, 0.919886, -0.342909, 0.202277, 1.43403, 1.33319, 3.11058)
+
+[node name="Tree15" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(0.0551767, -0.393342, -0.917735, 0.393342, 0.853373, -0.342107, 0.917735, -0.342107, 0.201804, 0.240201, 1.71995, 4.01294)
+
+[node name="Tree16" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.56126, -0.326042, -0.760711, 0.326042, 0.757708, -0.56531, 0.760712, -0.565311, -0.318967, 3.1564, 1.58311, 3.69366)
+
+[node name="Tree17" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.562576, -0.326806, -0.762494, 0.326806, 0.759483, -0.566635, 0.762495, -0.566636, -0.319715, 5.40528, 1.49824, 3.49566)
+
+[node name="Tree9" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.56126, -0.326042, -0.760712, 0.326042, 0.757708, -0.56531, 0.760712, -0.565311, -0.318968, 2.79001, 0.968781, 2.26034)
+
+[node name="Tree10" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.857347, 0.202777, 0.473115, -0.202777, 0.711758, -0.672519, -0.473115, -0.672519, -0.569104, 6.44253, 0.211783, 0.494128)
+
+[node name="Tree11" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.859356, 0.203252, 0.474224, -0.203253, 0.713426, -0.674096, -0.474224, -0.674096, -0.570439, 5.089, 0.869066, 2.02768)
+
+[node name="Tree12" parent="Tree" instance=ExtResource("1_ina0u")]
+transform = Transform3D(-0.857347, 0.202777, 0.473115, -0.202777, 0.711757, -0.672519, -0.473115, -0.672519, -0.569105, 1.5575, -0.408246, -0.952509)
+
+[node name="Steps" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 1.08398e-16, 1.0799e-16, -1.4196e-16, 0.920614, 0.390474, -5.70903e-17, -0.390474, 0.920614, -1.55556e-16, 0.152946, 0.586084)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_m4ncl")
+
+[node name="Step 2" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 1.18772e-22, -1.3731e-22, -1.17809e-22, 1, 1.49612e-10, 1.51673e-22, 8.13172e-12, 1, -0.21231, 0.000706568, 0.187424)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 11" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 1.61062e-22, -1.3731e-22, -1.17649e-22, 1, 1.49612e-10, 1.94024e-22, 8.13172e-12, 1, 5.53909, 0.000706561, 0.187424)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 3" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 2.03455e-22, -2.43189e-22, -1.17729e-22, 1, 1.49612e-10, 1.72849e-22, 8.13172e-12, 1, -0.85651, 0.00227579, 0.603683)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 10" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 2.88137e-22, -3.49068e-22, -1.17729e-22, 1, 1.49612e-10, 1.72849e-22, 8.13172e-12, 1, 2.06639, 0.00382295, 1.01409)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step2" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 1.52875, 0.00212884, 0.564687)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 4" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 1.30509, 0.0014739, 0.390958)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 5" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 0.776238, -0.00062044, -0.164539)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step3" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 5.51825e-23, -5.79008e-23, -6.51884e-23, 1, 1.49612e-10, 6.69704e-23, 8.13172e-12, 1, 3.51558, 0, 0)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 6" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 1.61062e-22, -1.9025e-22, -1.17729e-22, 1, 1.49612e-10, 1.72849e-22, 8.13172e-12, 1, 3.30327, 0.000706568, 0.187424)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 7" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(1, 2.45744e-22, -2.96129e-22, -1.17729e-22, 1, 1.49612e-10, 1.72849e-22, 8.13172e-12, 1, 2.65907, 0.00227575, 0.603683)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step4" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 5.04433, 0.00212884, 0.564687)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 8" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 4.82067, 0.0014739, 0.390958)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
+
+[node name="Step 9" type="CSGCylinder3D" parent="Steps"]
+transform = Transform3D(0.186061, -0.00370452, -0.982531, 0.00370414, 0.999988, -0.0030685, 0.982531, -0.00306874, 0.186073, 4.29182, -0.00062044, -0.164539)
+radius = 0.186
+height = 0.019
+sides = 15
+material = SubResource("StandardMaterial3D_eyg4f")
